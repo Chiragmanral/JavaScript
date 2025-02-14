@@ -17,4 +17,14 @@ let state; // state ke value undefined hai kyonki sirf state ko define kiya ahi 
 // undefined => 
 // symbol => unique
 
-console.log(typeof "chirag");
+// console.log(typeof "chirag"); // string
+
+// console.log(typeof "456"); //string
+// console.log(typeof 345); //number
+// console.log(typeof true); //boolean
+// console.log(typeof 1); //number
+
+// console.log(typeof null); // object
+
+console.log(typeof undefined); //undefined
+
