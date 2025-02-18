@@ -1,3 +1,4 @@
+// camelcase Naming Convention means when the variable has a name of multiple words, each word is written same as normal English language but the first word starts with the small letter rest all the other words starts with the Capital letter like in normal english.
 const accountId = 15563;
 let accountEmail = "chiragmanral@gmail.com"; // variable declaration and initialization
 var accountPassword = "12345";

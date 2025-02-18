@@ -8,6 +8,12 @@ let isLoggedIn = true;
 let state; // state ke value undefined hai kyonki sirf state ko define kiya ahi initialize nhin kiya
 // let state = null; // here state has a standalone value which is null.
 
+let firstName = "Chirag";
+let country = "India";
+// String Interpolation
+let temp = `Hello, my name is ${firstName}, my age is ${age} ans I lives in country ${country}`;
+console.log(temp);
+
 // console.log(state);
 // number => 2 to the power 53
 // bigint
@@ -24,7 +30,14 @@ let state; // state ke value undefined hai kyonki sirf state ko define kiya ahi 
 // console.log(typeof true); //boolean
 // console.log(typeof 1); //number
 
-// console.log(typeof null); // object
+// console.log(typeof undefined); //undefined
 
-console.log(typeof undefined); //undefined
+// console.log(typeof null); // object -> It's an error in the js language bcz null is a standalone datatype it's not the datatype object.
+
+
+
+// console.log(typeof sayhello); // function -> It's an error bcz function is not a datatype it's lies in the object datatype(bcz in js function is a object).
+
+
+
 
