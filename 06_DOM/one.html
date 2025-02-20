@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+    <style>
+        .bg-black {
+            background-color: #212121;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div>
+
+        <!-- HTML Collection and nodelist dekhne mein array jaise lgte hai lekin array hai nhi array alag hai lekin voh kuch array ki properties ko supprot jarur krte hai lekin hum chahe toh unhein array mein convert kar skte hai jisse ki hum unpar array ki sari properties ko use kar paye -->
+        <h1 class="heading" id="title">DOM Learning on Chai aur Code <span style="visibility: hidden;">Chirag Singh Manral</span></h1>
+        <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, quis!</h2>
+        <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, quis!</h2>
+        <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, quis!</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, reiciendis!</p>   
+    </div>
+</body>
+
+<script>
+    const title = document.getElementById('title');
+
+    console.log(title.textContent); //it prints all the availaible text content of the title(h1 tag) chahe voh visible ho yaa fir hidden ho,lekin yeah raw html tags ko support nhi karta
+    console.log(title.innerText); // lekin iska mtlb hai ki title ke andar joh bhi visible text hai sirf ussi ko print karo, hidden content ko print mat karo, yeah bhi raw html tags ko support nhi karta
+
+    console.log(title.innerHTML); //yeah andar ki sari ki sari html as it is lakar de deta hai with all the text inside it.
+
+</script>
+
+</html>

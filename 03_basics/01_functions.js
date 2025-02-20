@@ -97,23 +97,82 @@
 
 // console.log(loginUserMessage());
 
-let arr1 = [1, 2, 3];
-let arr2 = [4, 5, 6];
-let resultArray = [...arr1, ...arr2]; // Made a new array and then spreads the arr1 and arr2 array one by one by using ... -> spread operator here.
+// let arr1 = [1, 2, 3];
+// let arr2 = [4, 5, 6];
+// let resultArray = [...arr1, ...arr2]; // Made a new array and then spreads the arr1 and arr2 array one by one by using ... -> spread operator here.
 
-console.log();
+// console.log(resultArray);
 
 // ... -> This is the both rest and spread operator but used for diffrent purposes on differnt places.
 // rest operator menas it inserts all the bachi hui values in an array then we can use that array and perform various array operations on that array as per our need like foreach,slice or splice.
-function calculateCartPrice(...num) { // ..., here this is used as the rest operator, not spread operator;
-    return num;
+// function calculateCartPrice(...num) { // ..., here this is used as the rest operator, not spread operator;
+//     return num;
+// }
+
+// console.log(calculateCartPrice(200));
+// console.log(calculateCartPrice(200, 400));
+// console.log(calculateCartPrice(200, 400, 600, 2000, 2034874, 3439));
+
+// function calculateCartPrice(val1, val2, ...num) { // ..., here this is used as the rest operator, not spread operator;
+//     // It means first value goes in val1 variable, then second one goes inside the val2 variable and rest all the values goes inside the num array.
+//     console.log(val1);
+//     console.log(val2);
+//     return num;
+// }
+
+// console.log(calculateCartPrice(200));
+// console.log(calculateCartPrice(200, 400, 500));
+// console.log(calculateCartPrice(200, 400, 600, 2000, 2034874, 3439));
+
+// const user = {
+//     username : "Chirag",
+//     price : 1999
+// }
+
+// function handleObject(anyObject) {
+//     console.log(`Username is ${anyObject.username} and the price is ${anyObject.price}`);
+// }
+
+// // handleObject(user);
+// handleObject({
+//     username : "Compro",
+//     price : 123
+// });
+
+// Array of objects
+// const arr = [{
+//     username : "Chirag",
+//     password : 123
+// },
+// {
+//     username : "Arpit",
+//     password : 456
+// },
+// {
+//     username : "Shirish",
+//     password : 789
+// }];
+
+// console.log(arr[0].username);
+// console.log(arr[0].password);
+// console.log(arr[2].password);
+
+// Object of Arrays
+// const obj = {
+//     arr1 : [1, 2, 3],
+//     arr2 : [4, 5, 6],
+//     arr3 : [7, 8, 9]
+// }
+
+// console.log(obj.arr2[0]);
+// console.log(obj.arr2[1]);
+// console.log(obj.arr2[2]);
+
+const myNewArray = [100, 200, 300];
+
+function getSecondValue(arr) {
+    return arr[1];
 }
 
-console.log(calculateCartPrice(200));
-console.log(calculateCartPrice(200,400));
-console.log(calculateCartPrice(200,400, 600, 2000, 2034874, 3439));
-
-function calculateCartPrice(val1, val2, ...num) { // ..., here this is used as the rest operator, not spread operator;
-    // It means 
-    return num;
-}
+console.log(getSecondValue(myNewArray));
+console.log(getSecondValue([10, 20, 30]));

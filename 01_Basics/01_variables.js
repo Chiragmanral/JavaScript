@@ -35,3 +35,11 @@ So we introduce let for giving him the power of functional or block scope
 It means var keyword always has global scope even used inside a function or block, it supports hoisting
 but let keyword have functional and block scope if used inside a function or block,it doesn't supports hoisting
 */
+
+// When variable is neither declared nor initialized then compiler gives reference error.
+// If variable is only declared not initialized then compiler gives undefined bcz it's the default value for all the non-initialized things in js.
+// if variable is declared and also initialized then the most updated value gets printed by the compiler.
+
+// () -> parantheses
+// [] -> square brackets
+// {} -> curly braces(brackets)
