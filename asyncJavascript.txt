@@ -1,0 +1,11 @@
+By deafult javascript is a single-threaded and synchronous language.
+synchronous language means code is executed in a serial and synchronous way means from left to right and top to bottom.
+single thread hone ak mtlb hai ki pura execution 1 hi maijn thread par hotabahi isiliye pure js skow hoti hai lekin jab hum runtime environment use krte hai like browser and node.js tab asynchronous feature ka use karke js fast ho jati hai,isiliye hum asynchronous js ko use krte hai 
+
+Blocking code v/s Non-blocking code
+
+Blocking code means that code which blocks or stops the program execution which is by default nat\ure og javascript in which jab tak purana kaam nhi hota aage nhi badenge nya kaam nhi krenge this is synchronous code
+Non-blocking code means that code which does not blocks the program execution in javascript we have to use special featurtes to access the power of asynchronous code in javascript,this is not by default nature of javascript.
+
+
+

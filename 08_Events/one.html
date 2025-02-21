@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #212121; color: #ffffff;">
+    <h2>Amazing Image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="../Images/photoshop.jpg" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="../Images/japan.jpg" alt="japan"></li>
+            <li><img width="200px" id="river" src="../Images/river.jpg" alt="river"></li>
+            <li><img width="200px" id="owl" src="../Images/owl.jpg" alt="owl"></li>
+            <li><img width="200px" id="prayer" src="../Images/prayer.jpg" alt="prayer"></li>
+            <li><a style="color: aquamarine;" href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a></li>
+        </ul>
+    </div>
+</body>
+    <script>
+        // const owlClick = document.getElementById('owl'); //yeah features kam provide karta hai
+        // owlClick.onclick = () => {
+        //     console.log("Owl Clicked");
+        //     alert("Owl Clicked");
+        // }
+        // document.getElementById('owl').onclick =  function() { //yeah features kam provide karta hai
+        //     alert("Owl clicked");
+        // }
+
+        // attachEvent -> it means ki kisi bhi event ko kisi bhi element par attach kardo only used for making website run on internert Explorer(IE).
+        // on -> only used in jQuery a famous framework like react back in the old good days.
+
+        // type,timestamp,defaultPrevented
+        // target, toElement, srcElement, currentTarget
+        // clientX, clientY, screenX, screenY
+        // altkey, ctrlkey, shiftkey, keyCode
+        // false(by default) -> event bubbling -> it means kia andar se bahar ki oor jana hai pehle andar vala event trigger hoga and print hoga fir bahar vala event trigger and print hoga.
+        // true -> event capturing -> it means ki bahar se andar ki oor aayenge pehle bahar vala event trigger hoga and print hoga then fir andar vala event trigger hoga and print hoga.
+
+        // document.getElementById('images').addEventListener('click', function(ev) {
+        //     console.log('ul tag clicked bahar vala');
+        // }, false);
+
+        // document.getElementById('owl').addEventListener('click', function(e) {
+        //     console.log('img tag clicked andar vala');
+        //     e.stopPropagation(); //stopPropagation() function andar vale event ko propagate hokar bahar nhi jane dega menas bubble out hokar bahar vale event ul mein nhi jane dega toh isiliye sirf owl vala event hi trigger hoga images vala event trigger nhi hoga.
+        // }, false);
+
+        // document.getElementsByTagName('a').addEventListener('click', function(ev) {
+        //     ev.preventDefault();
+        //     ev.stopPropagation();
+        //     console.log("Google clicked!!");
+        // },false);
+
+        // document.getElementById('images').addEventListener('click', (ev) => {
+        //     console.log(ev.target); //ev.target means the lement on which event is triggred here the image on which we click will become the target element
+        //     // ev.target.remove(); //it removes only the image not it's parent li tag so bullet point vahin pada rahega,and remove just removes the current targetted element, while removeChild() removes the child of the current targetted element.
+        //     // But remove() is new so less developers use it and removeChild() is old so more developers use it.
+        //     console.log(ev.target.parentNode); // it gives us the parent li of that img on which we click.
+        //     // ev.target.parentNode.remove(); // it removes the li tag of the clicked image, so bullet point bhi chala jayega.
+        //     // console.log(ev.target.parentNode.parentNode);
+        //     // console.log(ev.target.parentNode.parentNode.parentNode.parentNode);
+        //     // ev.target.parentNode.parentNode; // it selects the ul tag whole which is the parent of li tag which is got clicked through img
+        //     ev.target.parentNode.parentNode.removeChild(ev.target.parentNode); //it removes that li child which is got clicked through img but through its parent ul tag, it's the old way
+        // },false);
+
+        document.querySelector('#images').addEventListener('click', (ev) => {
+            console.log(ev.target.tagName); //IMG if image got clicked and LI if li tag got clicked
+            if(ev.target.tagName === 'IMG') {
+                console.log(ev.target.id);
+                let removeIt = ev.target.parentNode;
+                removeIt.remove();
+            }
+        },false) //false -> false means event bubbling and true means event capturing
+
+    </script>
+
+</html>
