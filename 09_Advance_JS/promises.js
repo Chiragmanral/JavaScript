@@ -40,29 +40,57 @@
 // })
 
 // Fourth promise
-const promiseFour = new Promise((resolve, reject) => {
-    let bug = true;
+// const promiseFour = new Promise((resolve, reject) => {
+//     let bug = true;
+    // let data = {
+    //     username : "chirag",
+    //     password : 12345
+    // }
+//     if(!bug) {
+//         resolve(data);
+//     }
+//     else {
+//         reject('Something went wrong');
+//     }
+// })
+
+// promiseFour.then(user => { //linked with resolve of promise
+//     console.log(user);
+//     console.log(user.username);
+//     return user.password;
+// })
+// .then(password => { // linked with reject of promise
+//     console.log(password);
+// })
+// .catch(error => {
+//     console.log(error);
+// })
+// .finally(() => console.log('The promise is either gets resolved or rejected')); //yeah ek tarike se by default hai yeah toh atlast run karega hi karega humara
+
+// Promise Five
+const promiseFive = new Promise((resolve, reject) => {
+    let error = true;
     let data = {
         username : "chirag",
         password : 12345
     }
-    if(!bug) {
-        resolve(data);
+    if(error) {
+        reject('ERROR : Something went wrong');
     }
     else {
-        reject('Something went wrong');
+        resolve(data);
     }
 })
 
-promiseFour.then(user => { //linked with resolve of promise
-    console.log(user);
-    console.log(user.username);
-    return user.password;
-})
-.then(password => { // linked with reject of promise
-    console.log(password);
-})
-.catch(error => {
-    console.log(error);
-})
-.finally(() => console.log('The promise is either gets resolved or rejected')); //yeah ek tarike se by default hai yeah toh atlast run karega hi karega humara
+async function consumePromiseFive() { //iss function declaration ke andar promise use hora hai joh ki 1 asynchronous task hai js mein toh isiliye iske aage async keyword lagana jaroori hai yeah batane ke liouye ki iss function ke andar asynchronus task hone vala hai bcz by default js mein sare task synchronous hote hai vaise bhi aur function declaration ke andar bhi
+    try { //it means the promise is resolved
+        const response = await promiseFive; //await keyword promise ke aage use karne ka matlab hai ki promise 1 asynchromnous task hai js mein toh uske response ke liye wait karo chahe voh resolve ho jaye yaa fior rejevt ho jaye
+        console.log(response);
+        console.log(response.username);
+        console.log(response.password);
+
+    }
+    catch(error) { //it means the promise gets rejected
+        console.log(error);
+    }
+}
