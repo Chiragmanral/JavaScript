@@ -7,5 +7,24 @@ Blocking code v/s Non-blocking code
 Blocking code means that code which blocks or stops the program execution which is by default nat\ure og javascript in which jab tak purana kaam nhi hota aage nhi badenge nya kaam nhi krenge this is synchronous code
 Non-blocking code means that code which does not blocks the program execution in javascript we have to use special featurtes to access the power of asynchronous code in javascript,this is not by default nature of javascript.
 
+Api websites :- https://api.github.com/users
+                https://randomuser.me
+Important Websites :- JSON Formatter(https://jsonformatter.org)
 
+Official v8 engine github :- https://github.com/v8/v8
 
+All types of console in js :
+console.log()
+console.warn()
+console.error()
+console.debug()
+console.trace()
+console.info()
+console.profile()
+console.profileEnd()
+console.time()
+console.timeLog()
+console.timeEnd()
+console.timeStamp()
+
+teacher24feb@mailsac.com

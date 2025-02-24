@@ -15,4 +15,21 @@ const randomColor = function() {
 // console.log(Math.random() * 10); // it just shifts the first digit after point to the before point position.
 // console.log(Math.floor(3.11)) // it means lower value of the float(ex :- it converts 3.1 to 3 and also 3.9 to 3) and returns an integer.
 // console.log(Math.ceil(3.11)) // it means upper value of the float(ex :- it converts 3.1 to 4 and also 3.9 to 4) and returns an integer.
-// console.log(Math);
+
+let intervalId; //undefined
+// For starting the color change after each second
+document.querySelector('#start').addEventListener('click', () => {
+    if(!intervalId) {
+        intervalId = setInterval(changeBackgroundColor, 100);
+    }
+
+    function changeBackgroundColor() {
+        document.querySelector('body').style.backgroundColor = randomColor();
+    }
+}, false);
+
+// For stopping the color change after each second
+document.querySelector('#stop').addEventListener('click', () => {
+    clearInterval(intervalId);
+    intervalId = null;
+}, false);

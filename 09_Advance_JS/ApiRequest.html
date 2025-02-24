@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Basic API Request</title>
+</head>
+<body style="background-color: #212121;">
+    <!-- Value	State	            Description
+          0	    UNSENT	            Client has been created. open() not called yet.
+          1	    OPENED	            open() has been called.
+          2	    HEADERS_RECEIVED	send() has been called, and headers and status are available.
+          3	    LOADING	            Downloading; responseText holds partial data.
+          4	    DONE	            The operation is complete. -->
+</body>
+<script>
+    
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+    const xhr = new XMLHttpRequest(); // readystate(UNSENT) -> 0, The XMLHttpRequest client has been created, but the open() method hasn't been called yet.
+    xhr.onreadystatechange = function() {
+        console.log(xhr.readyState);
+    }
+    xhr.open('GET', requestUrl); // readystate(OPENED) -> 1, open() method has been invoked. During this state, the request headers can be set using the setRequestHeader() method and the send() method can be called which will initiate the fetch.
+    xhr.onreadystatechange = function() {
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4) {
+            // const data = this.responseText; // string type hai data yahan par, so isse data nikalna mushkil hai
+            // console.log(typeof data); //string, JSON hi hai yeah used for data storage and transmission
+            // console.log(data);
+            const data = JSON.parse(this.responseText); // object type yhai data yahan par, lekin isse data nikalna aasan hai
+            console.log(typeof data); //object
+            console.log(data);
+            // console.log(data.followers);
+            console.log(data.avatar_url);
+        }
+    }
+    xhr.send(); // readystate(HEADERS_RECEIVED) ->send() has been called, all redirects (if any) have been followed and the response headers have been received.
+    
+    // readyState -> 4 //Response's body is being received. If responseType is "text" or empty string, responseText will have the partial text response as it loads.
+
+    // readyState -> 5 //Response's body is being received. If responseType is "text" or empty string, responseText will have the partial text response as it loads.
+</script>
+</html>
