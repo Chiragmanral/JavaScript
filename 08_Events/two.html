@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous Javascript - 1</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+    <script>
+        const sayChirag = function() {
+            console.log("Chirag");
+        }
+
+        const changeText = () => {
+            // console.log("chirag manral");
+            document.querySelector('h1').innerHTML = "Best JS Series";
+            // document.querySelector('h1').innerText = "Best JS Series";
+            // document.querySelector('h1').textContent = "Best JS Series";
+        }
+
+        // setTimeout(() => {
+        //     document.querySelector('h1').innerHTML = "Best JS Series";
+        // },2000); // it means execute the code in the arrow function after 2000ms(2s) only one time,while in setInterval function the code(inside the arrow function, here this arrow function is handler) gets executed again and again after a fixed interval of 2000ms(2s)
+    
+        // setTimeout(sayChirag, 2000)
+        const changeMe = setTimeout(changeText,2000);
+        // const changeMe = setTimeout(changeText,0);
+
+        // clearTimeout(changeMe); //clearTimeOut joh hai voh setTimeOut ka reference leta hai and uske joh bhi call back function event queue mein pde hote hai unhe remove kar deta hai agar setTimeIOut 0s ka bhi hoga toh bhi voh executr nhi ho payeag kyonkli jitne mein web Api ko call karega and uske event queue mein jayeag execute hone ke liye utne mein clearTimeOut method chal jayega and usse remove kar dega
+
+        document.querySelector('#stop').addEventListener('click', function() {
+            clearTimeout(changeMe);
+            console.log('STOPPED');
+        })
+
+    </script>
+</html>

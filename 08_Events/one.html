@@ -65,14 +65,21 @@
         //     ev.target.parentNode.parentNode.removeChild(ev.target.parentNode); //it removes that li child which is got clicked through img but through its parent ul tag, it's the old way
         // },false);
 
+        // document.querySelector('#images').addEventListener('click', (ev) => {
+        //     console.log(ev.target.tagName); //IMG if image got clicked and LI if li tag got clicked
+        //     if(ev.target.tagName === 'IMG') {
+        //         console.log(ev.target.id);
+        //         let removeIt = ev.target.parentNode;
+        //         removeIt.remove();
+        //     }
+        // },false) //false -> false means event bubbling and true means event capturing
+
         document.querySelector('#images').addEventListener('click', (ev) => {
-            console.log(ev.target.tagName); //IMG if image got clicked and LI if li tag got clicked
-            if(ev.target.tagName === 'IMG') {
-                console.log(ev.target.id);
-                let removeIt = ev.target.parentNode;
-                removeIt.remove();
-            }
-        },false) //false -> false means event bubbling and true means event capturing
+            ev.target.parentNode.style.display = 'none';
+            // ev.target.parentNode.style.visibility = 'hidden';
+            // ev.target.parentNode.style.opacity = 0;
+            // ev.target.parentNode.style.transform = "translateX(-100%)";
+        }, false);
 
     </script>
 

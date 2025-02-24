@@ -23,10 +23,10 @@ const arr1 = [1, 2, 3, 4, 5, 6];
  
 // console.log(newValue);
 
-// const myTotal = arr1.reduce(function(accumulator, currentValue) {
-//     console.log(`Accumulator is :- ${accumulator} and current value is :- ${currentValue}`);
-//     return accumulator + currentValue;
-// },0);
+const myTotal = arr1.reduce(function(accumulator, currentValue) {
+    console.log(`Accumulator is :- ${accumulator} and current value is :- ${currentValue}`);
+    return accumulator + currentValue;
+},0);
 
 // console.log(myTotal);
 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous Javascript - 2</title>
+</head>
+<body>
+    <h1>Chai aur JavaScript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+    <script>
+    // const sayDate = function(str) { //str is parameter of the function expression and also used inside it.
+    //     console.log(str, Date.now());
+    // }
+
+    // const intervalId = setInterval(sayDate, 2000, "hii"); // executes saydate function iteratively after each 2s of interval 
+    // here, we are passing "hii" to the sayDate function expression as a callback but we can't give it like this sayDate('hii') bcz we need to give a handler(or callback or function reference to it.) 
+
+    // clearInterval(intervalId); //it stops the execution of intervalId name ka setInterval method.
+
+    const printName = (name) => {
+        console.log(`The name is :- ${name}`);
+    }
+
+    let intervalId;
+
+    // start button starts the printing of name="chirag" iteratively
+    document.querySelector('#start').addEventListener('click', () => {
+        intervalId =  setInterval(printName, 2000, "chirag");
+    })
+
+    // stop button just stops the printing of my name
+    document.querySelector('#stop').addEventListener('click', () => {
+        clearInterval(intervalId);
+    })
+    </script>
+</html>
