@@ -1,4 +1,4 @@
-const arr1 = [1, 2, 3, 4, 5, 6];
+// const arr1 = [1, 2, 3, 4, 5, 6];
 
 // const initialValue = 5;
 
@@ -23,10 +23,10 @@ const arr1 = [1, 2, 3, 4, 5, 6];
  
 // console.log(newValue);
 
-const myTotal = arr1.reduce(function(accumulator, currentValue) {
-    console.log(`Accumulator is :- ${accumulator} and current value is :- ${currentValue}`);
-    return accumulator + currentValue;
-},0);
+// const myTotal = arr1.reduce(function(accumulator, currentValue) {
+//     console.log(`Accumulator is :- ${accumulator} and current value is :- ${currentValue}`);
+//     return accumulator + currentValue;
+// },0);
 
 // console.log(myTotal);
 
@@ -53,4 +53,26 @@ const myTotal = arr1.reduce(function(accumulator, currentValue) {
 
 // console.log(mySum);
 
+// let arr = [1, 2, 3, 4, 5];
+
+// let result = arr.reduceRight((acc, currVal) => acc * currVal, 1); // same as reduce method just it runs from right to left only
+// console.log(result);
+
+// And it's a good practice to use initialValue always in reduce or reduceRight method bcz if the array is empty and we don't give any initialValue then it throws error so for preventing this error always use initialvalue in reduce and reduceRight method
+
+// let arr = [];
+
+// let result = arr.reduceRight((acc, currVal) => acc * currVal, 1); 
+// console.log(result); // 1 but if we don't use the initialValue here then it throws error
+
+// let arr = [];
+
+// let result = arr.reduceRight((acc, currVal) => acc * currVal); 
+// console.log(result); // TypeError: Reduce of empty array with no initial value
+
+// console.log(Array.isArray(5456)); //false
+// console.log(Array.isArray('fdfgsdv')); //false
+// console.log(Array.isArray({})); //false
+// console.log(Array.isArray(2378n)); //false
+// console.log(Array.isArray([])); //true
 

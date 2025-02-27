@@ -168,11 +168,11 @@
 // console.log(obj.arr2[1]);
 // console.log(obj.arr2[2]);
 
-const myNewArray = [100, 200, 300];
+// const myNewArray = [100, 200, 300];
 
-function getSecondValue(arr) {
-    return arr[1];
-}
+// function getSecondValue(arr) {
+//     return arr[1];
+// }
 
-console.log(getSecondValue(myNewArray));
-console.log(getSecondValue([10, 20, 30]));
+// console.log(getSecondValue(myNewArray));
+// console.log(getSecondValue([10, 20, 30]));
