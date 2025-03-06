@@ -47,15 +47,4 @@
 
 // arr.reduce(ActiveXObject, cu)
 
-function User(username, age) {
-    this.username = username;
-    this.age = age
-}
-
-
-const userOne = new User("Chirag", 21);
-
-console.log(userOne);
-console.log(typeof userOne);
-console.log(typeof User);
 
