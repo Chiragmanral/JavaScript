@@ -75,7 +75,6 @@ function toggleTimer() {
             timerState.style.display = "none";
             keyPad.style.display = "none";
             borderChange.style.borderColor = '#82c631';
-            // borderChange.style.height = '475px';
             
         }
         interval = setInterval(() => {
