@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.flex-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .flex-box-item1 {
+    background-color: #239beb;
+    border-color: #239beb;
+    border-width: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 13px #00000080;
+    height: 501px;
+    min-height: max-content;
+    width: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.flex-box-item1 {
+    background-color: #ffffff;
+    width: 240px;
+    min-height: 200px;
+    border-radius: 10px;
+    border: 15px solid #239beb;
+    box-shadow: 0 0 13px #00000080;
+}
+
+.header {
+    /* border: 2px solid red; */
+    height: 45px;
+    width: 210px;
+    position: relative;
+    /* display: flex; */
+    /* justify-content: end; */
+}
+
+.cross-icon {
+    position: absolute;
+    /* padding: 10px; */
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.timer-state {
+    /* border: 2px solid red; */
+    height: 34px;
+    width: 210px;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    border-bottom: 2px solid #239BEB;
+}
+
+.count-up {
+    color: #323232;
+    font-size: 16px;
+    font-family: Mulish sans-serif;
+    /* margin-bottom: 0px; */
+    /* padding: 1px 6px 0px; */
+    border-bottom: 2.5px solid #239BEB;
+}
+
+.count-down {
+    color: #323232;
+    font-size: 16px;
+    font-family: Mulish sans-serif;
+    /* margin-bottom: 4px; */
+    /* padding: 1px 6px 0px; */
+    border-bottom: 2.5px solid #239BEB;
+}
+
+.timer-value {
+    height: 90px;
+    width: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer-value h1 {
+    font-size: 60px;
+    font-weight: bold;
+    font-family: Mulish sans-serif;
+    color : #323232;
+}
+
+
+.keypad {
+    height: 240px;
+    width: 210px;
+    line-height: 41px;
+    padding: 0 23px 12px;
+}
+
+.three-numbers, .one-number {
+    width: 164px;
+    height: 57px;
+    padding: 0 0 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.one-number {
+    justify-content: center;
+}
+
+.digit {
+    height: 50px;
+    width: 50px;
+    font-size: 20px;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+}
+
+.footer {
+    /* border: 2px solid red; */
+    height: 62px;
+    width: 210px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.fa-solid {
+    font-size: 32px;
+    color: #323232;
+}
