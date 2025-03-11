@@ -66,9 +66,10 @@
     color: #323232;
     font-size: 16px;
     font-family: Mulish sans-serif;
+    opacity: 0.5;
     /* margin-bottom: 0px; */
     /* padding: 1px 6px 0px; */
-    border-bottom: 2.5px solid #239BEB;
+    /* border-bottom: 2.5px solid #239BEB; */
 }
 
 .count-down {

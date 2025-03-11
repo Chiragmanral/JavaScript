@@ -8,6 +8,8 @@ const resetButton = document.querySelector(".fa-square-xmark");
 const closeButton = document.querySelector(".fa-xmark");
 const timerState = document.querySelector(".timer-state");
 const wholeTimer = document.querySelector(".flex-box-item1");
+const countUp = document.querySelector(".count-up");
+const countDown = document.querySelector(".count-down");
 
 function updateDisplay() {
     let minutes = String(Math.floor(timeInSeconds/60)).padStart(2, "0");
@@ -63,3 +65,16 @@ function closeTimer() {
 playButton.addEventListener('click', toggleTimer);
 resetButton.addEventListener('click', resetTimer);
 closeButton.addEventListener('click', closeTimer);
+countUp.addEventListener('click', () => {
+    countUp.style.borderBottom = "2.5px solid #239BEB";
+    countUp.style.opacity = 1;
+    countDown.style.borderBottom = "none";
+    countDown.style.opacity = 0.5;
+})
+
+countDown.addEventListener('click', () => {
+    countDown.style.borderBottom = "2.5px solid #239BEB";
+    countDown.style.opacity = 1;
+    countUp.style.borderBottom = "none";
+    countUp.style.opacity = 0.5;
+})
