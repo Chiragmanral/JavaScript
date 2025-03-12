@@ -2,7 +2,7 @@ let inputDigits = "";      // Stores user input as a string
 let timeInSeconds = 0;     // Current countdown time (in seconds)
 let savedTime = 0;         // Stores the original time before the first start
 let interval = null;       // Holds the setInterval reference
-let isRunning = false;     // Tracks if the timer is running
+let isRunning = false;     // Tracks if the timer is running or not
 let mode = "countdown";    // Tracks the current mode ("countdown" or "countup")
 
 const timerDisplay = document.querySelector(".timer");
@@ -33,7 +33,7 @@ if(mode === "countdown" && timeInSeconds === 0) {
 
 // Function to convert user input into time
 function updateTimeFromInput() {
-    if (isRunning) return; // Prevent changes while running
+    if (isRunning) return; // Prevent changes while timer is running
 
     let paddedInput = inputDigits.padStart(4, "0"); // Ensure 4-digit format (MMSS)
     let minutes = parseInt(paddedInput.slice(0, 2), 10);
@@ -74,25 +74,25 @@ digitButtons.forEach(button => {
 let flag = "false";
 
 // Function to start/pause the timer
+// If the value of isRunning is true it means timer was running when we hit the button and we want to pause the timer so we have to clear the interval for stopping the timer.
+// But if the value of isRunning is false it means timer was stopped when we hit the button and now we want to play the timer on where it was stopped
 function toggleTimer() {
-    if (isRunning) {
-        clearInterval(interval);
-        interval = null;
-        isRunning = false;
-    } else {
+    if (isRunning) { //button is clicked for stopping the running timer bcz [isRunning = "true"]
+    stopTimer();    
+    } 
+    else { //button is clicked for starting the timer bcz initially timer is stopped bcz [isRunning = 'false']
         if (mode === "countdown" && timeInSeconds <= 0) return;
 
-        if(flag == "false" && mode === "countdown") {
+        if(flag == "false" && mode === "countdown") { // only for saving the initial time once in the countdown mode
             savedTime = timeInSeconds;
             flag = "true";
         }
         if (!interval && mode === "countdown") {
-            // savedTime = timeInSeconds;
             timerState.style.display = "none";
             keyPad.style.display = "none";
             borderChange.style.borderColor = '#82c631';
         }
-        if(!interval && mode === "countup") {
+        else if(!interval && mode === "countup") {
             timerState.style.display = "none";
             keyPad.style.display = "none";
             resetButton.style.visibility = "visible";
@@ -108,13 +108,13 @@ function toggleTimer() {
                     alert("Time's up!");
                 }
             }
-            if(mode === "countup") {
+            else if(mode === "countup") {
                 timeInSeconds++;
             }
             updateDisplay();
         }, 1000);
         
-        isRunning = true;
+        isRunning = true; //ab timer shuru ho chuka hai isiliye isRunning = "true"
     }
 }
 
@@ -177,9 +177,12 @@ countUp.addEventListener('click', () => {
     keyPad.style.display = "none";
     repeatButton.style.visibility = "hidden";
     resetButton.style.visibility = "hidden";
+    playButton.style.opacity = 1;
+    resetButton.style.opacity = 1;
+
 });
 
-// Function to switch to Count Down mode
+// Function to switch to Count Down mode(default mode)
 countDown.addEventListener('click', () => {
     mode = "countdown";
     stopTimer();
