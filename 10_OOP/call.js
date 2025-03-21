@@ -1,28 +1,30 @@
-// function setUserName(username) {
-//     // this = {} by default
-//     // lekin jab call method ke through hum kisi aur function ka execution context yaa fir this object isse pass karenge then iss function ke pass uss function ka this object aajayega and yeah ussi this object par kaam karega naa ki apne empty this object par
+class setUserName {
+    constructor(username) {
+        //     // this = {} by default
+        //     // lekin jab call method ke through hum kisi aur function ka execution context yaa fir this object isse pass karenge then iss function ke pass uss function ka this object aajayega and yeah ussi this object par kaam karega naa ki apne empty this object par
+        this.username = username; // call method ka use karke ab yeah vali line username property add karegi createUser function ke this object mein
 
-//     this.username = username; // call method ka use karke ab yeah vali line username property add karegi createUser function ke this object mein
-//     // balki pehle yeah line yeah property add kar rhi thi setUserName functuon ke apne this object mein joh ki empty tha
-//     console.log("called through another function");
-// }
+        //     // balki pehle yeah line yeah property add kar rhi thi setUserName functuon ke apne this object mein joh ki empty tha
+        console.log("called through another function");
+    }
+}
 
-// function createUser(username, email, password) {
-//     // setUserName(username); // yahan par hum setUserName function ko regular mode mein use kar rhe hai toh isiliye vohn implicitly kuch bhi return nhi karega, yahan par setusername function call toh hoga lekin uske pass createUserName function ka current execution context means this object nhi jayega and voh joh bhi properties and methods add kaerega voh sare apne this ke andar hi karega and voh this object return nhi hoga ansd fir voh sara kaam joh bhi setUsername function ke andar hoga voh 1 tarah se kho jayega
-//     // isiliye humein call method ka use karke createUserName function ka this object current execution context usse dena padega jismein voh chijen edit karein aur humare pass voh sare edits this object ke andar pade ho and hum unhein use kar payein
+class createUser {
+    constructor(username, email, password) {
+        //     // setUserName(username); // yahan par hum setUserName function ko regular mode mein use kar rhe hai toh isiliye vohn implicitly kuch bhi return nhi karega, yahan par setusername function call toh hoga lekin uske pass createUserName function ka current execution context means this object nhi jayega and voh joh bhi properties and methods add kaerega voh sare apne this ke andar hi karega and voh this object return nhi hoga ansd fir voh sara kaam joh bhi setUsername function ke andar hoga voh 1 tarah se kho jayega
+        //     // isiliye humein call method ka use karke createUserName function ka this object current execution context usse dena padega jismein voh chijen edit karein aur humare pass voh sare edits this object ke andar pade ho and hum unhein use kar payein
+        //     // const user = new setUserName(username); // yahan par setUsername function ko constructor mopde mein use kiya jaa rha hai so it means ki yahan user ke andar setUsername function ka this object return ho jayega implicitly 
+        //     // And kisi bhi function ek andar ke this object ka naam uss function name se jana jata hai
+        //     // createUser function ka this object is :- createUser {} 
+        //     // setUserName ka this object is :- setUsername {}
+        setUserName.call(this, username); //yahan par hum setUsername function ko regular mode mein use kar rhwe hai lekin call method ka use karke usse createUser function ka apna this object(current execution context) de rhe hai jisse ki setUsername function ke andar this object mein joh bhi propertires and methods add honge voh iss this object mein honge and yeah this object pass by reference hota hai(bcz object hamesha pass by reference hi hote hai js mein) so sare changes save ho jayenge createUser ke this object mein and baad mein humein mil jayenge and hum unhein use kar payenge createUser function ke this object ke through kyonki sare changes ho hi createUser function ke this object ke andar rhe hain
+        this.email = email;
+        this.password = password;
+    }
+}
 
-//     // const user = new setUserName(username); // yahan par setUsername function ko constructor mopde mein use kiya jaa rha hai so it means ki yahan user ke andar setUsername function ka this object return ho jayega implicitly 
-//     // And kisi bhi function ek andar ke this object ka naam uss function name se jana jata hai
-//     // createUser function ka this object is :- createUser {} 
-//     // setUserName ka this object is :- setUsername {}
-
-//     setUserName.call(this, username); //yahan par hum setUsername function ko regular mode mein use kar rhwe hai lekin call method ka use karke usse createUser function ka apna this object(current execution context) de rhe hai jisse ki setUsername function ke andar this object mein joh bhi propertires and methods add honge voh iss this object mein honge and yeah this object pass by reference hota hai(bcz object hamesha pass by reference hi hote hai js mein) so sare changes save ho jayenge createUser ke this object mein and baad mein humein mil jayenge and hum unhein use kar payenge createUser function ke this object ke through kyonki sare changes ho hi createUser function ke this object ke andar rhe hain
-//     this.email = email;
-//     this.password = password;
-// }
-
-// const hello = new createUser("chirag", 'chirag@fb.com', 123); // createUser funtion use ho rha hai constructor mode mein
-// console.log(hello);
+const hello = new createUser("chirag", 'chirag@fb.com', 123); // createUser funtion use ho rha hai constructor mode mein
+console.log(hello);
 
 // ======================================================Important=================================================================
 
