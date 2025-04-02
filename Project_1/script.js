@@ -7,8 +7,8 @@ let mode = "countdown";    // Tracks the current mode ("countdown" or "countup")
 
 const timerDisplay = document.querySelector(".timer");
 const digitButtons = document.querySelectorAll(".digit");
-const playButton = document.querySelector(".fa-play");
 const resetButton = document.querySelector(".fa-square-xmark");
+const playButton = document.querySelector(".fa-play");
 const repeatButton = document.querySelector(".fa-repeat");
 const closeButton = document.querySelector(".fa-xmark");
 const timerState = document.querySelector(".timer-state");
@@ -26,8 +26,8 @@ function updateDisplay() {
 }
 
 if(mode === "countdown" && timeInSeconds === 0) {
-    playButton.style.opacity = 0.5;
     resetButton.style.opacity = 0.5;
+    playButton.style.opacity = 0.5;
     repeatButton.style.opacity = 0.5;
 }
 
@@ -61,8 +61,8 @@ function disableButton() {
 // Handle digit button clicks
 digitButtons.forEach(button => {
     button.addEventListener("click", () => {
-        playButton.style.opacity = 1;
         resetButton.style.opacity = 1;
+        playButton.style.opacity = 1;
         repeatButton.style.opacity = 1;
         if (inputDigits.length < 4) {  // Max 4 digits (MMSS)
             inputDigits += button.innerText;
@@ -132,7 +132,7 @@ function resetTimer() {
         timeInSeconds = 0;
         timerState.style.display = "flex";
         resetButton.style.visibility = "hidden";
-        updateDisplay();
+        updateDisplay(); 
     }
     else {
         stopTimer();
@@ -142,8 +142,8 @@ function resetTimer() {
         borderChange.style.borderColor = "#239BEB";
         keyPad.style.display = "block";
         timerState.style.display = "flex";
-        playButton.style.opacity = 0.5;
         resetButton.style.opacity = 0.5;
+        playButton.style.opacity = 0.5;
         repeatButton.style.opacity = 0.5;
         updateDisplay();
     }
@@ -153,9 +153,9 @@ function resetTimer() {
 function repeatTimer() {
     stopTimer();
     timeInSeconds = savedTime;
-    timerState.style.display = "flex";
-    keyPad.style.display = "block";
     borderChange.style.borderColor = '#239beb';
+    keyPad.style.display = "block";
+    timerState.style.display = "flex";
     updateDisplay();
 }
 
@@ -175,11 +175,10 @@ countUp.addEventListener('click', () => {
     countDown.style.borderBottom = "none";
     countDown.style.opacity = 0.5;
     keyPad.style.display = "none";
-    repeatButton.style.visibility = "hidden";
+    resetButton.style.opacity = 1;
     resetButton.style.visibility = "hidden";
     playButton.style.opacity = 1;
-    resetButton.style.opacity = 1;
-
+    repeatButton.style.visibility = "hidden";
 });
 
 // Function to switch to Count Down mode(default mode)
@@ -189,18 +188,18 @@ countDown.addEventListener('click', () => {
     inputDigits = "";
     timeInSeconds = 0;
     updateDisplay();
-    countDown.style.borderBottom = "2.5px solid #239BEB";
-    countDown.style.opacity = 1;
     countUp.style.borderBottom = "none";
     countUp.style.opacity = 0.5;
+    countDown.style.borderBottom = "2.5px solid #239BEB";
+    countDown.style.opacity = 1;
     keyPad.style.display = "block";
-    repeatButton.style.visibility = "visible";
     resetButton.style.visibility = "visible";
+    repeatButton.style.visibility = "visible";
     
 });
 
 // Attach event listeners
-playButton.addEventListener("click", toggleTimer);
 resetButton.addEventListener("click", resetTimer);
+playButton.addEventListener("click", toggleTimer);
 repeatButton.addEventListener("click", repeatTimer);
 closeButton.addEventListener('click', closeTimer);
